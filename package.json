@@ -1,0 +1,22 @@
+{
+  "name": "string-calculator-kata-III",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/calc.js",
+  "scripts": {
+    "test": "jasmine-node test/calc-spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NeLk42/string-calculator-kata-III.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NeLk42/string-calculator-kata-III/issues"
+  },
+  "homepage": "https://github.com/NeLk42/string-calculator-kata-III",
+  "dependencies": {
+    "jasmine-node": "^1.14.5"
+  }
+}
