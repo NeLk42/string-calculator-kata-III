@@ -9,10 +9,13 @@ describe('String calculator add() method', function () {
         expect(calc.add('')).toBe(0)
     })
 
-    it('should return 1 if string is "1"', function () {
+    it('should return 1 if string is 1', function () {
         expect(calc.add('1')).toBe(1)
     })
 
+    it('should return 3 if string is 1,2', function () {
+        expect(calc.add('1,2')).toBe(3)
+    })
 })
 
 
