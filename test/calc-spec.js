@@ -5,6 +5,14 @@ describe('String calculator add() method', function () {
         expect(calc.add()).toBe(0)
     })
 
+    it('should return zero if string is "" ', function () {
+        expect(calc.add('')).toBe(0)
+    })
+
+    it('should return 1 if string is "1"', function () {
+        expect(calc.add('1')).toBe(1)
+    })
+
 })
 
 
