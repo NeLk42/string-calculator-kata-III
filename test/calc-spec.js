@@ -21,19 +21,17 @@ describe('String calculator add() method', function () {
         expect(calc.add('1,2,3')).toBe(6)
     })
 
-    it('should return 6 if string is 1\n2,3', function () {
-        expect(calc.add('1\n2,3')).toBe(6)
+    it('should return 10 if string is 1\n2,3,4', function () {
+        expect(calc.add('1\n2,3,4')).toBe(10)
+    })
+
+    it('should return 15 if string is //;\n1;2;3;4;5', function () {
+        expect(calc.add('//;\n1;2;3;4;5')).toBe(15)
     })
 })
 
 
 /*
-
-
- 3. Allow the Add method to handle new lines between numbers (instead of commas).
- a. Example: “1\n2,3” should return 6.
- b. Example: “1,\n” is invalid, but you don’t need a test for this case.
- c. Only test correct inputs – there is no need to deal with invalid inputs for this kata.
  4. Allow the Add method to handle a different delimiter:
  a. To change the delimiter, the beginning of the string will contain a separate line that looks like
  this: “//[delimiter]\n[numbers]”
