@@ -18,12 +18,10 @@ var calc = {
             if (numsArray[i] < 0) {
                 negativeValue = true
                 err = err + ' ' + numsArray[i]
-            } else {
+            } else if (numsArray[i] <= 1000) {
                 res += parseInt(numsArray[i])
             }
-
         }
-
         if (negativeValue) {
             throw new Error(err)
         }

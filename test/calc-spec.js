@@ -34,14 +34,14 @@ describe('String calculator add() method', function () {
             calc.add('1,-2')
         }).toThrow(new Error('Negatives not allowed: -2'))
     })
+
+    it('should return 2 if string is 2,1002', function () {
+        expect(calc.add('2,1002')).toBe(2)
+    })
 })
 
 /*
 
- 5. Calling Add with a negative number will throw an exception “Negatives not allowed: “ listing all
- negative numbers that were in the list of numbers.
- a. Example “-1,2” throws “Negatives not allowed: -1”
- b. Example “2,-4,3,-5” throws “Negatives not allowed: -4,-5”
  6. Numbers bigger than 1000 should be ignored.
  a. Example: “1001,2” returns 2
  7. Delimiters can be of any length, using this syntax: “//[***]\n1***2***3” returns 6.
