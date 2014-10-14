@@ -1,3 +1,7 @@
-/**
- * Created by ramonantunez on 14/10/14.
- */
+var calc = {
+    add: function (text) {
+        return 0
+    }
+}
+
+module.exports = calc;
