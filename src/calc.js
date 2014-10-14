@@ -3,8 +3,16 @@ var calc = {
         var delim = text.indexOf('//'),
             array
         if (delim >= 0) {
-            var subtext = text.substring(2).split('\n')
-            array = subtext[1].split(subtext[0])
+            delim = text.indexOf('//[')
+            if (delim >= 0) {
+                ////[**]\n1**2**3**4**5
+                var subtext = text.substring(3).split('\n')
+                var delim = subtext[0].replace(']', '')
+                array = subtext[1].split(delim)
+            } else {
+                var subtext = text.substring(2).split('\n')
+                array = subtext[1].split(subtext[0])
+            }
         } else {
             array = text.replace('\n', ',').split(',')
         }

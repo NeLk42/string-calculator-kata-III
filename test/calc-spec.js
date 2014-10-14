@@ -38,18 +38,14 @@ describe('String calculator add() method', function () {
     it('should return 2 if string is 2,1002', function () {
         expect(calc.add('2,1002')).toBe(2)
     })
+
+    it('should return 21 if string is //[**]\n1**2**3**4**5**6', function () {
+        expect(calc.add('//[**]\n1**2**3**4**5**6')).toBe(21)
+    })
 })
 
 /*
-
- 6. Numbers bigger than 1000 should be ignored.
- a. Example: “1001,2” returns 2
  7. Delimiters can be of any length, using this syntax: “//[***]\n1***2***3” returns 6.
  8. Allow multiple delimiters, using this syntax: “//[*][%]\n1*2%3” returns 6.
  9. Handle multiple delimiters of any length.
-
-
-
-
-
  */
