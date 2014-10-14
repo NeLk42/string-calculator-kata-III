@@ -1,6 +1,6 @@
 var calc = {
     getNumbers: function (text) {
-        var array = text.split(',')
+        var array = text.replace('\n', ',').split(',')
         return array
     },
     add: function (text) {
