@@ -36,7 +36,6 @@ describe('String calculator add() method', function () {
     })
 })
 
-
 /*
 
  5. Calling Add with a negative number will throw an exception “Negatives not allowed: “ listing all
