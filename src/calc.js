@@ -1,7 +1,7 @@
 var calc = {
     getNumbers: function (text) {
-        var delim = text.indexOf('//')
-        var array
+        var delim = text.indexOf('//'),
+            array
         if (delim >= 0) {
             var subtext = text.substring(2).split('\n')
             array = subtext[1].split(subtext[0])
@@ -11,9 +11,21 @@ var calc = {
         return array
     },
     getSum: function (numsArray) {
-        var res = 0
+        var res = 0,
+            negativeValue = false,
+            err = 'Negatives not allowed:'
         for (var i = 0; i < numsArray.length; i++) {
-            res += parseInt(numsArray[i])
+            if (numsArray[i] < 0) {
+                negativeValue = true
+                err = err + ' ' + numsArray[i]
+            } else {
+                res += parseInt(numsArray[i])
+            }
+
+        }
+
+        if (negativeValue) {
+            throw new Error(err)
         }
         return res
     },

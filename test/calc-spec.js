@@ -28,15 +28,17 @@ describe('String calculator add() method', function () {
     it('should return 15 if string is //;\n1;2;3;4;5', function () {
         expect(calc.add('//;\n1;2;3;4;5')).toBe(15)
     })
+
+    it('should throw an error when string is 1,-2', function () {
+        expect(function () {
+            calc.add('1,-2')
+        }).toThrow(new Error('Negatives not allowed: -2'))
+    })
 })
 
 
 /*
- 4. Allow the Add method to handle a different delimiter:
- a. To change the delimiter, the beginning of the string will contain a separate line that looks like
- this: “//[delimiter]\n[numbers]”
- b. Example: “//;\n1;2” should return 3 (the delimiter is ;)
- c. This first line is optional; all existing scenarios (using , or \n) should work as before.
+
  5. Calling Add with a negative number will throw an exception “Negatives not allowed: “ listing all
  negative numbers that were in the list of numbers.
  a. Example “-1,2” throws “Negatives not allowed: -1”
