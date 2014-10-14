@@ -42,6 +42,10 @@ describe('String calculator add() method', function () {
     it('should return 21 if string is //[**]\n1**2**3**4**5**6', function () {
         expect(calc.add('//[**]\n1**2**3**4**5**6')).toBe(21)
     })
+
+    it('should return 28 if string is //[**][%]\n1%2**3%4**5**6%7', function () {
+        expect(calc.add('//[**][%]\n1%2**3%4**5**6%7')).toBe(28)
+    })
 })
 
 /*

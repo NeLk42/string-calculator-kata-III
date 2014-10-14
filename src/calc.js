@@ -5,10 +5,22 @@ var calc = {
         if (delim >= 0) {
             delim = text.indexOf('//[')
             if (delim >= 0) {
-                ////[**]\n1**2**3**4**5
-                var subtext = text.substring(3).split('\n')
-                var delim = subtext[0].replace(']', '')
-                array = subtext[1].split(delim)
+                ////[       **          ]\n1**2**3**4**5
+                //[         **][%       ]\n1%2**3%4**5**6%7
+                var subtext = text.substring(3).split(']\n')
+                var delim = subtext[0].substring(-1)
+                if (delim.indexOf('][') > 0) {
+                    var delims = subtext[0].split('][')
+                    var aux = subtext[1]
+                    for (var i = 0; i < delims.length; i++) {
+                        while (aux.indexOf(delims[i]) > 0) {
+                            aux = aux.replace(delims[i], '][')
+                        }
+                    }
+                    array = aux.split('][')
+                } else {
+                    array = subtext[1].split(delim)
+                }
             } else {
                 var subtext = text.substring(2).split('\n')
                 array = subtext[1].split(subtext[0])
